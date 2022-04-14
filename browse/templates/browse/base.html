@@ -1,0 +1,58 @@
+{% load static %}
+<head>
+    <title>
+        Amir's Commerce
+    </title>
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'css/base.css' %}"
+    >
+    {% block extrahead %}
+    {% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <img 
+            src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.clipartbest.com%2Fcliparts%2FdT6%2Fx5n%2FdT6x5n6pc.png&f=1&nofb=1"
+            class="navbar--logo"
+        />
+        <div class="navbar--search-outer">
+                <input 
+                    placeholder="search for products"
+                    class="navbar--search-input"
+                > 
+                </input>
+                <button class="navbar--search-logoframe" onclick="location.href='/home'">
+                    <img
+                        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.freeiconspng.com%2Fuploads%2Fsearch-icon-png-21.png&f=1&nofb=1"
+                        class="navbar--search-logo"
+                    >
+                </button>
+        </div>
+
+        <button>
+            <img
+                src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fgetdrawings.com%2Fimg%2Fgeneric-person-silhouette-6.png&f=1&nofb=1"
+                class="navbar--login"
+            >
+        </button>
+        <button onclick="location.href='/cart' ">
+            <img 
+                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.imgbin.com%2F0%2F2%2F11%2Fimgbin-shopping-cart-logo-shopping-bags-trolleys-shopping-cart-xzPxaZ8Yn54fDyRGB9hQCURaa.jpg&f=1&nofb=1"
+                class="navbar--cart"
+            >
+        </button>
+    </nav>
+    <div class="content">
+        <div>
+            {% block navbar %}
+            {% endblock %}  
+        </div>
+        
+        <div>
+            {% block content %}
+            {% endblock %}  
+        </div>
+    </div>
+</body>

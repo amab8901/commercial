@@ -1,0 +1,58 @@
+{% extends "browse/base.html" %}
+{% load static %}
+{% block extrahead %}
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'css/index.css' %}" 
+    >
+{% endblock %}
+{% block navbar %} 
+
+{% endblock %}
+
+{% block content %}
+<div class="home-container">
+    <div class="product-container">
+        {% for product in product_list %}
+            <div class="product">
+                <div class="product--title">
+                    {{ product.name }}
+                </div>
+                <img 
+                    src="{% static ''%}images/{{product.image}}"
+                    class="product--image"
+                >
+                <a href={{ product.payment_link }}>
+                    <button type="button" class="product--buybutton" >
+                        Buy
+                    </button>
+                </a>
+                
+                <!-- <div class="product--price">
+                    {{ product.price }} $
+                </div>
+                <div class="product--buy">
+                    <button 
+                        class="product--decrease" 
+                    >
+                        -
+                    </button>
+                    <div class="product--quantity">
+                        {{ product.quantity }}
+                    </div>
+                    <button 
+                        class="product--increase" 
+                    >
+                        +
+                    </button>
+                </div> -->
+            </div>
+        {% endfor %}
+    </div>
+
+
+</div>
+
+
+{% endblock %}

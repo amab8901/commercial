@@ -1,0 +1,68 @@
+{% extends "browse/base.html" %}
+{% load static %}
+{% block extrahead %}
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'css/checkout.css' %}"
+    >
+{% endblock %}
+{% block navbar %} 
+
+{% endblock %}
+
+{% block content %}
+<div class="checkout-container">
+    <h1>
+        This page will show:
+    </h1>
+    <div>
+        Delivery method:
+    </div>
+    <ul>
+        <li>
+            Schenker (Radio Button)
+        </li>
+        <li>
+            Postnord (Radio Button)
+        </li>
+        <li>
+            Bring (Radio Button)
+        </li>
+    </ul>
+    <div>
+        Contact info:
+    </div>
+    <ul>
+        <li>
+            Post Address
+        </li>
+        <li>
+            ZIP number
+        </li>
+        <li>
+            First Name
+        </li>
+        <li>
+            Last Name
+        </li>
+        <li>
+            Email
+        </li>
+        <li>
+            Phone number
+        </li>
+        <li>
+            Payment Method
+        </li>
+    </ul>
+    <div>
+        Confirm Order
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+

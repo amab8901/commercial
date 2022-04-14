@@ -1,0 +1,84 @@
+{% extends "browse/base.html" %}
+{% load static %}
+{% block extrahead %}
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'css/cart.css' %}"
+    >
+{% endblock %}
+
+{% block navbar %} 
+
+{% endblock %}
+
+{% block content %}
+    <div class="cart-container">
+
+        <h1>
+            To-do list
+        </h1>
+        
+        <div>
+            List of products
+        </div>
+        <ul>
+            <li>
+                subtotal
+            </li>
+            <li>
+                transport cost
+            </li>
+            <li>
+                total price
+            </li>
+            <li>
+                +/- buttons for changing quantity
+            </li>
+            <li>
+                'remove' button
+            </li>
+        </ul>
+        <div>
+            Total price for the cart
+        </div>
+        <div>
+            checkout button
+        </div>
+        <h1>
+            Cart
+        </h1>
+        {% for product in order_list %}
+            <div class="product">
+                <img 
+                    src="{% static ''%}images/{{product.image}}"
+                    class="product--image"
+                >
+                <div class="product--description">
+                    <div>
+                        {{product.title}}
+                    </div>
+                    <div>
+                        {{product.price}} $
+                    </div>
+                    <div class="product--quantity">
+                        <button class="product--decrease">
+                            -
+                        </button>
+                        <div class="product--number">
+                            {{product.quantity}}
+                        </div>
+                        <button class="product--increase">
+                            +
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        {% endfor %}
+        <div class="subtotal">
+
+        </div>
+    </div>
+    
+{% endblock %}

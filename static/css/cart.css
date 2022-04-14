@@ -1,0 +1,37 @@
+.cart-container{
+    background: linear-gradient(grey, black);
+    height: 100%;
+    padding: 50px;
+}
+
+.product{
+    background: white;
+    width: 400px;
+    height: 200px;
+    display: flex;
+}
+
+.product--description{
+    background: blue;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+.product--image{
+    width: 150px;
+    height: 150px;
+}
+
+.product--number{
+    width: 30px;
+    text-align: center;
+}
+
+.product--quantity{
+    display: flex;
+    background: green;
+    justify-content: left;
+}
