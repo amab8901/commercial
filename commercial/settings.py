@@ -16,8 +16,8 @@ import sys
 import os
 from stripe_lists import *
 
-print(prices_list)
-print(sys.path)
+# print(prices_list)
+# print(sys.path)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,7 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-tmx4y)l@a4cw5b5(abog&#m@4*-85(=nl3pg+-8)e2#k$k6ngw'
+load_dotenv() # load variables from .env file into os.environ
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -146,7 +147,6 @@ PAYMENT_VARIANTS = {
     'default': ('payments.dummy.DummyProvider', {})
 }
 
-# import keys 
-load_dotenv() # load variables from .env file into os.environ
+# import keys (load_dotenv() has been done earlier in code)
 STRIPE_PUBLIC_KEY = os.environ['STRIPE_PUBLIC_KEY']
 STRIPE_SECRET_KEY = os.environ['STRIPE_SECRET_KEY']
